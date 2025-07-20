@@ -1,37 +1,24 @@
-import './App.css';
+import React from 'react';
 import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Footer from './components/Footer';
-import UserProfile from './components/UserProfile';
 import WelcomeMessage from './components/WelcomeMessage';
+import MainContent from './components/MainContent';
+import UserProfile from './components/UserProfile';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
-      
       <WelcomeMessage />
-
       <MainContent />
-
-      <h2>Featured Users</h2>
       <UserProfile 
-        name="Alice" 
-        age="25" 
-        bio="Loves hiking and photography" 
+        name="Irene Kilonzo"
+        age={25}
+        bio="Passionate front-end developer and lifelong learner."
       />
-      <UserProfile 
-        name="Irene" 
-        age="24" 
-        bio="React learner, future frontend queen 👑" 
-      />
-
       <Footer />
     </div>
   );
 }
 
 export default App;
-
-
-
