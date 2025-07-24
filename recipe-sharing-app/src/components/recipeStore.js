@@ -1,34 +1,39 @@
 import { create } from 'zustand';
 
-export const useRecipeStore = create((set, get) => ({
+const useRecipeStore = create((set, get) => ({
+  // Main recipe list
   recipes: [],
 
-  searchTerm: '',
-  filteredRecipes: [],
+  // Full recipe list setter
+  setRecipes: (newRecipes) => set({ recipes: newRecipes }),
 
-  favorites: [],
-
-  recommendations: [],
-
+  // Add new recipe
   addRecipe: (recipe) =>
     set((state) => ({
       recipes: [...state.recipes, recipe],
     })),
 
+  // Update a recipe
   updateRecipe: (updatedRecipe) =>
     set((state) => ({
-      recipes: state.recipes.map((r) =>
-        r.id === updatedRecipe.id ? updatedRecipe : r
+      recipes: state.recipes.map((recipe) =>
+        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
       ),
     })),
 
+  // Delete a recipe
   deleteRecipe: (id) =>
     set((state) => ({
-      recipes: state.recipes.filter((r) => r.id !== id),
+      recipes: state.recipes.filter((recipe) => recipe.id !== id),
     })),
 
-  setSearchTerm: (term) => set({ searchTerm: term }),
-
+  // Search and Filtering
+  searchTerm: '',
+  setSearchTerm: (term) => {
+    set({ searchTerm: term });
+    get().filterRecipes(); // Trigger filtering when term is set
+  },
+  filteredRecipes: [],
   filterRecipes: () =>
     set((state) => ({
       filteredRecipes: state.recipes.filter((recipe) =>
@@ -36,24 +41,30 @@ export const useRecipeStore = create((set, get) => ({
       ),
     })),
 
+  // Favorites
+  favorites: [],
   addFavorite: (recipeId) =>
     set((state) => ({
       favorites: [...new Set([...state.favorites, recipeId])],
     })),
-
   removeFavorite: (recipeId) =>
     set((state) => ({
       favorites: state.favorites.filter((id) => id !== recipeId),
     })),
 
+  // Recommendations (Mocked logic)
+  recommendations: [],
   generateRecommendations: () => {
-    const { recipes, favorites } = get();
+    const { favorites, recipes } = get();
     const recommended = recipes.filter(
       (recipe) =>
-        favorites.includes(recipe.id) && Math.random() > 0.4
+        favorites.includes(recipe.id) && Math.random() > 0.3 // simulate logic
     );
     set({ recommendations: recommended });
   },
 }));
+
+export { useRecipeStore };
+
 
 
