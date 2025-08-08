@@ -10,23 +10,3 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# GitHub User Search Application
-
-This is a React application that allows users to search for GitHub profiles using the GitHub API. It provides a simple and intuitive interface to find users and view basic profile details.
-
-## 🚀 Features
-
-- 🔍 Search GitHub users by username
-- 👤 View user details like avatar, bio, location, and profile link
-- ⚡ Fast and responsive interface using React and Axios
-
-## 🛠️ Tech Stack
-
-- React (with Vite)
-- Axios for HTTP requests
-- Tailwind CSS (optional for styling)
-- GitHub API
-
-## 🧱 Project Structure
-
-
