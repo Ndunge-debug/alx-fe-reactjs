@@ -13,8 +13,6 @@ const DeleteRecipeButton = ({ id }) => {
   return <button onClick={handleDelete}>Delete</button>;
 };
 
-<<<<<<< HEAD
 export default DeleteRecipeButton;
-=======
+
 export default DeleteRecipeButton;
->>>>>>> 88a0050a03e5e51c49d765e9039a0d6cad74632e
