@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -34,17 +33,3 @@ function App() {
 }
 
 export default App
-=======
-import UserProfile from "./components/UserProfile";
-
-function App() {
-  return (
-    <div>
-      <UserProfile />
-    </div>
-  );
-}
-
-export default App;
-
->>>>>>> 88a0050a03e5e51c49d765e9039a0d6cad74632e
