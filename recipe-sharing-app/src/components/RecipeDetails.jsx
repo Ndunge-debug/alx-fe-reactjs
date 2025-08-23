@@ -21,8 +21,5 @@ const RecipeDetails = () => {
   );
 };
 
-<<<<<<< HEAD
 export default RecipeDetails;
-=======
 export default RecipeDetails;
->>>>>>> 88a0050a03e5e51c49d765e9039a0d6cad74632e
